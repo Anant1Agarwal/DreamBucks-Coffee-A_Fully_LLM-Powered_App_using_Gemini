@@ -6,3 +6,5 @@ pandas
 pinecone
 mlxtend
 pprintpp
+google-cloud-storage
+firebase-admin

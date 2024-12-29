@@ -1,0 +1,27 @@
+We want the backend system Such that we can store images. A bucket based system Where you can upload images and files, and retrieve them easily
+
+We also want a database system where we can upload product data in the form of JSON and retrieve it easily.
+
+Firebase is a good option for this. We can use Firebase storage for storing images and files and Firebase Firestore/RealTime Database for storing JSON data.
+
+firebase databse is a NoSQL database. It is a document-oriented database. It stores data in the form of JSON. It is a cloud-hosted database. It is a real-time database. It is a scalable database. It is a serverless
+
+In Firebase, we need RealTime Database and Storage. 
+
+Generate Service Account Key 
+No way of uploading/push Service Account Key credentials to server securely, so we use .env file to store the credentials by copying the credentials from the Service Account Key.json file
+
+
+Firebase storage is not free, so only 1 gb of data can be stored for free.
+
+FIREBASE_TYPE=
+FIREBASE_PROJECT_ID=
+FIREBASE_PRIVATE_KEY_ID=
+FIREBASE_PRIVATE_KEY=
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_CLIENT_ID=
+FIREBASE_AUTH_URI=
+FIREBASE_TOKEN_URI=
+FIREBASE_AUTH_PROVIDER_X509_CERT_URL=
+FIREBASE_CLIENT_X509_CERT_URL=
+FIREBASE_UNIVERSE_DOMAIN=
