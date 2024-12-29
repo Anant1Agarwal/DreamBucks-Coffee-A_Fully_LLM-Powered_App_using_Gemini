@@ -25,3 +25,7 @@ FIREBASE_TOKEN_URI=
 FIREBASE_AUTH_PROVIDER_X509_CERT_URL=
 FIREBASE_CLIENT_X509_CERT_URL=
 FIREBASE_UNIVERSE_DOMAIN=
+
+pinecone index name is the name of the index in the pinecone database. It is used to store the embeddings of the images. It is used to search for similar items
+
+i don't need to specify cosine similarity in the pinecone search function. It is the default similarity function in pinecone and it handles it effieciently by itself
