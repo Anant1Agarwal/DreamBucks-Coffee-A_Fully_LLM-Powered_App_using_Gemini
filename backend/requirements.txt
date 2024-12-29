@@ -4,3 +4,5 @@ openai
 scikit-learn
 pandas
 pinecone
+mlxtend
+pprintpp
