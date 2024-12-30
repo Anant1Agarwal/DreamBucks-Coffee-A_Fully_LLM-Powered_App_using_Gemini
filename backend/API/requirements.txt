@@ -1,4 +1,6 @@
 pandas
 python-dotenv
-openai
+google-generativeai
 pinecone
+fastapi
+uvicorn

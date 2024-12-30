@@ -39,3 +39,5 @@ it sends a message if any irrelavant message is sent to the chatbot
 
 classification agent is used to classify task into categories if chat is allowed by guard agent.
 it chooses among details_agent, order_taking_agent, recommendation_agent.
+
+go on localhost:8000/docs and test the forTestingPurposes.json and see for yourself the output on fastapi
