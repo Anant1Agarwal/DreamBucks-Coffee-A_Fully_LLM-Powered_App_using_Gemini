@@ -3,9 +3,22 @@ import os
 import json
 from copy import deepcopy
 from .utilities import get_gemini_response
-# from openai import OpenAI
 import google.generativeai as genai
+import enum
+from typing_extensions import TypedDict
+
 load_dotenv()
+
+# STURCTURED OUTPUT
+class Decision(enum.Enum):
+    ALLOWED = "allowed"
+    NOT_ALLOWED = "not allowed"
+
+# Define the schema for the JSON output
+class OutputSchema(TypedDict):
+    chain_of_thought: str
+    decision: Decision
+    message: str
 
 class GuardAgent():
     def __init__(self):
@@ -26,7 +39,7 @@ class GuardAgent():
             {
             "chain of thought": "go over each of the points above and see if the message lies under this point or not. Then you write some your thoughts about what point is this input relevant to."
             "decision": "allowed" or "not allowed". Pick one of those. and only write the word.
-            "message": leave the message "ONE COFFEE COMING RIGHT UP" if it's allowed, otherwise write "Sorry, I can't help with that. Can I help you with your order or any other query?"
+            "message": leave the message "Access Allowed" if it's allowed, otherwise write "Sorry, I can't help with that. Can I help you with your order or any other query?"
             }
             """
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
@@ -38,8 +51,8 @@ class GuardAgent():
 
         input_messages=messages[-3:]
 
-        chatbot_output = get_gemini_response(self.client,input_messages)
-        print(chatbot_output)
+        chatbot_output = get_gemini_response(self.client,input_messages,OutputSchema)
+        print("GUARD AGENT OUTPUT:",chatbot_output)
         output = self.postprocess(chatbot_output)
         
         return output
