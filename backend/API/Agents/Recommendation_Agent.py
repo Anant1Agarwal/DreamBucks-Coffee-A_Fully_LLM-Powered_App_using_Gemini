@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import os
-from .utilities import get_gemini_response, double_check_json_output
+from .utilities import get_gemini_response
 import google.generativeai as genai
 from copy import deepcopy
 import json

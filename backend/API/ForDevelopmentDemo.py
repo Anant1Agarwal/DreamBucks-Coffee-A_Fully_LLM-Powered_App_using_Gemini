@@ -1,4 +1,4 @@
-from Agents import (GuardAgent,ClassificationAgent,DetailsAgent,AgentProtocol, RecommendationAgent)
+from Agents import (GuardAgent,ClassificationAgent,DetailsAgent,AgentProtocol, RecommendationAgent, OrderTakingAgent)
 import os
 from typing import Dict
 def main():
@@ -7,13 +7,15 @@ def main():
     recommendation_agent = RecommendationAgent('Recommendation_instances/Market_Basket_recommendations.json',
                                                     'Recommendation_instances/popularity_recommendation.csv'
                                                     )
+    order_taking_agent = OrderTakingAgent(recommendation_agent)
     # print(recommendation_agent.popular_recommendations)
     # print(recommendation_agent.get_popular_recommendation("Coffee"))
     # print(recommendation_agent.get_apriori_recommendation(["Latte","Dark chocolate"]))
 
     agent_dict: Dict[str,AgentProtocol] = {
         "details_agent":DetailsAgent(),
-        "recommendation_agent": recommendation_agent
+        "recommendation_agent": recommendation_agent,
+        "order_taking_agent": order_taking_agent
     }
     
     messages = []
