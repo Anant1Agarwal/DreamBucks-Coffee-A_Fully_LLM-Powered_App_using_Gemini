@@ -1,12 +1,19 @@
-from Agents import (GuardAgent,ClassificationAgent,DetailsAgent,AgentProtocol)
+from Agents import (GuardAgent,ClassificationAgent,DetailsAgent,AgentProtocol, RecommendationAgent)
 import os
 from typing import Dict
 def main():
     guard_agent = GuardAgent()  
     classification_agent = ClassificationAgent()
+    recommendation_agent = RecommendationAgent('Recommendation_instances/Market_Basket_recommendations.json',
+                                                    'Recommendation_instances/popularity_recommendation.csv'
+                                                    )
+    # print(recommendation_agent.popular_recommendations)
+    # print(recommendation_agent.get_popular_recommendation("Coffee"))
+    # print(recommendation_agent.get_apriori_recommendation(["Latte","Dark chocolate"]))
 
     agent_dict: Dict[str,AgentProtocol] = {
-        "details_agent":DetailsAgent()
+        "details_agent":DetailsAgent(),
+        "recommendation_agent": recommendation_agent
     }
     
     messages = []
@@ -24,8 +31,9 @@ def main():
         guard_agent_response = guard_agent.get_response(messages)
         print("Guard Agent Response: ", guard_agent_response["parts"])
 
-        if guard_agent_response["memory"]["guard_decision"] == "allowed":
+        if guard_agent_response["memory"]["guard_decision"] == "not allowed":
             messages.append(guard_agent_response)
+            continue
          
 
         # Get ClassificationAgent's response

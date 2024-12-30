@@ -22,4 +22,21 @@ def get_gemini_response(client,messages,OutputSchema_class):
 
 
     return result.text
+
+# NO need to make double call as we are using GEMINI :)
+# def double_check_json_output(client,json_string,OutputSchema2):
+#     prompt = f""" You will check this json string and correct any mistakes that will make it invalid. Then you will return the corrected json string. Nothing else. 
+#     If the Json is correct just return it.
+
+#     If there is any text before or after Json string, remove it
+#     Do NOT return a single letter outside of the json string.
+
+#     {json_string}
+#     """
+
+#     messages = [{"role": "user", "parts": prompt}]
+
+#     response = get_gemini_response(client,messages,OutputSchema2)
+
+#     return response
    
