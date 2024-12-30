@@ -29,3 +29,10 @@ FIREBASE_UNIVERSE_DOMAIN=
 pinecone index name is the name of the index in the pinecone database. It is used to store the embeddings of the images. It is used to search for similar items
 
 i don't need to specify cosine similarity in the pinecone search function. It is the default similarity function in pinecone and it handles it effieciently by itself
+
+Agent coordinator/controller has all the agents together and defines the correct order of agent calling, and the correct order of agent execution. It is the main agent that controls all the other agents.
+
+Agent Protocols define certain functions that we can call on the agents. It is the interface that the agents implement. It is the contract that the agents follow.
+
+Guard Agent protects the system from any malicious activity. It is the security agent that protects the system from any unauthorized access.
+it sends a message if any irrelavant message is sent to the chatbot
