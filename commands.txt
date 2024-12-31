@@ -67,3 +67,8 @@ npm install nativewind
 npm install --save-dev tailwindcss@3.3.2
 
 npx tailwindcss init
+
+(tabs) in expo lets you create a tab based navigation in your app. It is used to create a bottom tab navigation in your app. It is used to navigate between different screens in your app.
+
+SafeAreaView is a component that is used to make sure that the content of the app is not hidden by the status bar, navigation bar, or any other system UI elements. It is used to make sure that the content of the app is visible to the user.
+npx expo start --offline
