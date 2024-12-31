@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
+
 const firebaseConfig = {
     apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY as string,
     authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN as string,

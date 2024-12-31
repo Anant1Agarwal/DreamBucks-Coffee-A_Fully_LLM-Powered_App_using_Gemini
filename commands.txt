@@ -74,3 +74,11 @@ SafeAreaView is a component that is used to make sure that the content of the ap
 npx expo start --offline
 
 Stack is a component that is used to create a stack-based navigation in your app. It is used to navigate between different screens in your app. It is used to create a stack of screens in your app.
+
+if permission denied in fetching products. change rules in firebase storage to allow read and write to everyone read true write true and just for testing, for production {
+  "rules": {
+    ".read": "auth != null",
+    ".write": false
+  }
+}
+
