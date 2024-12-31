@@ -11,6 +11,7 @@ export default function RootLayout() {
     "Sora-Bold": require("../assets/fonts/Sora-Bold.ttf"),
   });
 
+  // wait for fonts to be loaded
   if (!fontsLoaded) {
     return undefined;
   }
