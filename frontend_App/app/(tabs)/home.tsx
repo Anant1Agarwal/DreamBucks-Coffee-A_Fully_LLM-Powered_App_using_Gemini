@@ -9,6 +9,7 @@ import {
 } from "react-native-gesture-handler";
 import Feather from "@expo/vector-icons/Feather";
 import SearchArea from "@/components/SearchArea";
+import Banner from "@/components/Banner";
 
 const home = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -78,6 +79,7 @@ const home = () => {
           ListHeaderComponent={() => (
             <View className="flex">
               <SearchArea />
+              <Banner/>
             </View>
           )}
         />
