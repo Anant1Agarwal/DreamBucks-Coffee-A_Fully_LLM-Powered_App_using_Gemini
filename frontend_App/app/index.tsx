@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Text, View, SafeAreaView, ImageBackground } from "react-native";
 import {
   GestureHandlerRootView,
@@ -5,7 +6,7 @@ import {
 } from "react-native-gesture-handler";
 
 export default function Index() {
-  return (
+  return ( 
     <GestureHandlerRootView>
       <View className="w-full h-full">
         <ImageBackground
@@ -13,7 +14,7 @@ export default function Index() {
           source={require("../assets/images/index_bg_image.png")}
         >
           <View className="flex h-[48%]" />
-          <View className="flex w-[80%]">
+          <View className="flex w-[84%]">
             <Text className="text-white text-[40px] font-bold text-left font-[Sora-Bold] ">
               Welcome to DreamBucks Coffee!
             </Text>
@@ -29,7 +30,7 @@ export default function Index() {
                   padding: 12,
                   borderRadius: 8,
                   alignItems: "center",
-                }}
+                }}  onPress = {() => router.push("/(tabs)/home")}
               >
                 <Text className="text-xl text-white font-[Sora-SemiBold]">
                   Get Started
