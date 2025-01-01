@@ -4,7 +4,8 @@ import { useFonts } from "expo-font";
 import { CartProvider } from "@/components/CartContext";
 // import { NativeWindStyleSheet } from "nativewind";
 // import { styled } from 'nativewind';
-
+// import {RootSiblingParent} from 'react-native-root-siblings';
+import Toast from 'react-native-toast-message';
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     "Sora-Regular": require("../assets/fonts/Sora-Regular.ttf"),
@@ -19,11 +20,15 @@ export default function RootLayout() {
 
   return (
     <CartProvider>
+         
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="details" options={{ headerShown: true }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+  
       </Stack>
+      <Toast 
+        visibilityTime={2500} topOffset={60}/>
     </CartProvider>
   );
 }

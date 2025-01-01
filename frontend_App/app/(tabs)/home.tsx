@@ -13,6 +13,7 @@ import Banner from "@/components/Banner";
 import { router } from "expo-router";
 import { useCart } from "@/components/CartContext";
 
+import Toast from 'react-native-toast-message';
 const home = () => {
   const {addToCart,cartItems} = useCart();
   const [products, setProducts] = useState<Product[]>([]);
@@ -77,7 +78,11 @@ const home = () => {
     addToCart(name,1);
     // console.log("Added to cart");
     // console.log(cartItems);
-    
+    Toast.show({
+      type: 'success',
+      text1: (`${name} added to cart`),
+      text2: 'Want to add more ? 😋'
+    });
   }
 
 
