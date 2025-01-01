@@ -1,6 +1,7 @@
 import { Stack } from "expo-router/stack";
 import "../global.css";
 import { useFonts } from "expo-font";
+import { CartProvider } from "@/components/CartContext";
 // import { NativeWindStyleSheet } from "nativewind";
 // import { styled } from 'nativewind';
 
@@ -15,11 +16,14 @@ export default function RootLayout() {
   if (!fontsLoaded) {
     return undefined;
   }
-  
+
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{headerShown: false}} />
-    </Stack>
+    <CartProvider>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="details" options={{ headerShown: true }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </CartProvider>
   );
 }

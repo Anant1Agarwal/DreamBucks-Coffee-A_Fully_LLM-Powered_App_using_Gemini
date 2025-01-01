@@ -10,8 +10,11 @@ import {
 import Feather from "@expo/vector-icons/Feather";
 import SearchArea from "@/components/SearchArea";
 import Banner from "@/components/Banner";
+import { router } from "expo-router";
+import { useCart } from "@/components/CartContext";
 
 const home = () => {
+  const {addToCart,cartItems} = useCart();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -67,8 +70,16 @@ const home = () => {
   }, []);
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <SafeAreaView><Text>Loading...</Text></SafeAreaView>
   }
+
+  const addButton=(name:string)=>{
+    addToCart(name,1);
+    // console.log("Added to cart");
+    // console.log(cartItems);
+    
+  }
+
 
   return (
     <GestureHandlerRootView>
@@ -85,7 +96,19 @@ const home = () => {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <View className="w-[48%] m-2 bg-[white] rounded-2xl p-2 flex justify-between">
-              <TouchableOpacity>
+              <TouchableOpacity
+              onPress={()=>{
+                router.push({pathname:'/details' ,params:{
+                  name: item.name,
+                  image_url: item.image_url,
+                  type: item.category,
+                  description: item.description,
+                  price: item.price,
+                  rating: item.rating,
+                }})
+              }}
+              
+              >
                 <Image
                   className="w-full h-32 rounded-2xl"
                   source={{ uri: item.image_url }}
@@ -102,7 +125,7 @@ const home = () => {
                 <Text className="text-[#050505] text-xl font-[Sora-SemiBold] ">
                   ${item.price}
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>addButton(item.name)}>
                   <View className="mr-2 p-2 -mt-2 bg-app_green_color rounded-xl">
                     <Feather name="plus-circle" size={20} color="white" />
                   </View>

@@ -82,3 +82,5 @@ if permission denied in fetching products. change rules in firebase storage to a
   }
 }
 
+context is a component that is used to pass data between different components in your app. It is used to share data between different components in your app. It is Global state management in react native.
+whereas state is local state management in react native
