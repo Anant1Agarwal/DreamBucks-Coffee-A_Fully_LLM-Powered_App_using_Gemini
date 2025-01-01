@@ -17,6 +17,6 @@ export interface ProductCategory {
 // Message Interface
 export interface MessageInterface {
     role: string;
-    content: string;
+    parts: string;
     memory?: any;
 }
