@@ -51,7 +51,7 @@ const ProductList:React.FC<ProductListProps> = ({ products, quantities, setQuant
         />
 
       ):(
-        <View className='mx-7 items-center'>
+        <View className='mx-7 mt-10 items-center'>
             <Text className='text-2xl font-[Sora-SemiBold] text-[#A2A2A2]'>No items in your cart yet.</Text>
             <Text className='text-xl font-[Sora-SemiBold] text-[#242424]'>Let's Order something Delicious!</Text>
         </View>

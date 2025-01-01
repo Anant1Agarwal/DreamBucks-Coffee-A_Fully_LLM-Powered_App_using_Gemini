@@ -47,7 +47,7 @@ const DetailsPage = () => {
           </View>
         </ScrollView>
 
-        <View  className="flex-row justify-between bg-white rounded-tl-3xl rounded-tr-3xl pt-3 px-6 pb-7 " >
+        <View  className="flex-row justify-between bg-app_light_green_color rounded-tl-3xl rounded-tr-3xl pt-4 px-6 pb-7 " >
           <View>
             <Text className="text-base font-[Sora-SemiBold] text-[#A2A2A2] pb-3">
               Price
