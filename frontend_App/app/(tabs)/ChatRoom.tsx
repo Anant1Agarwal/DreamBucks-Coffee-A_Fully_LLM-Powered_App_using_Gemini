@@ -5,6 +5,11 @@ const ChatRoom = () => {
   return (
     <View>
       <PageHeader title="Service ChatBot" showHeaderRight={false} bgColor='#F9F9F9'/>
+      <View className='h-full flex-col justify-between '>
+      
+
+
+      </View>
       <Text>ChatRoom</Text>
     </View>
   )
