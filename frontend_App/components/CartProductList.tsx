@@ -1,7 +1,7 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Product } from '@/Object_Types/types';
-
+import OrdersHeader from './OrdersHeader';
 // Props for ProductList
 interface ProductListProps {
     products: Product[];
@@ -45,6 +45,7 @@ const ProductList:React.FC<ProductListProps> = ({ products, quantities, setQuant
         data={filteredProducts}
         renderItem={renderItem}
         keyExtractor={(item) => item.name}
+        ListHeaderComponent={<OrdersHeader />} 
         />
 
       ):(
