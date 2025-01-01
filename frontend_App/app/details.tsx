@@ -6,7 +6,7 @@ import PageHeader from "@/components/PageHeader";
 // import { ScrollView } from "react-native-gesture-handler";
 import DetailsHeader from "@/components/DetailsHeader";
 import DescriptionSection from "@/components/DescriptionSection";
-
+import SizesSection from "@/components/SizesSection";
 const DetailsPage = () => {
   const { name, image_url, type, description, price, rating } =
     useLocalSearchParams() as {
@@ -32,6 +32,7 @@ const DetailsPage = () => {
               type={type}
             />
           <DescriptionSection description={description}/>
+          <SizesSection />
           </View>
         </ScrollView>
       </View>
