@@ -35,7 +35,7 @@ const orderDetails = () => {
         bgColor="#F9F9F9"
       />
       <View className="h-full flex-col justify-between">
-        <View className="h-[75%] ">
+        <View className="h-[80%] ">
           <ProductList products={products} quantities={cartItems} setQuantities={setQuantityinCart} totalPrice={totalPrice} />
         </View>
       </View>
