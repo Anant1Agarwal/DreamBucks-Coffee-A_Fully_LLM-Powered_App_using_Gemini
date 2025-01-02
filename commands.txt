@@ -84,3 +84,65 @@ if permission denied in fetching products. change rules in firebase storage to a
 
 context is a component that is used to pass data between different components in your app. It is used to share data between different components in your app. It is Global state management in react native.
 whereas state is local state management in react native
+
+
+
+docker compose up --build
+docker compose up
+
+
+on amazon ec2 instance,run these commands
+sudo yum update -y
+sudo yum -y install docker
+
+sudo service docker start
+
+sudo usermod -a -G docker ec2-user
+pwd
+
+mkdir downloads_backend
+cd downloads_backend
+
+
+in VSCODE terminal of backend folder API
+chmod 600 AA-Key-1.pem
+
+scp -i AA-Key-1.pem dockerfile app.py requirement.txt
+
+//Write code to upload all the files to the ec2 instance
+# Upload all files in the current directory to the EC2 instance
+scp -i AA-Key-1.pem * ec2-user@<EC2_INSTANCE_PUBLIC_DNS>:/home/ec2-user/downloads_backend/
+scp i AA-Key-1.pem .
+
+scp -i AA-Key-1.pem -r * ec2-user@1:/home/ec2-user/downloads_backend/
+
+scp -i AA-Key-1.pem -r .env ec2-user@1/:/home/ec2-user/downloads_backend/
+
+scp -i your-key.pem -r my_fastapi_app ec2-user@your-ec2-public-ip:/home/ec2-user/
+
+in the ec2 instance terminal
+# Download the latest version of Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+
+sudo docker build -t fastapi_backend_coffeeshop:v1.0 -f Dockerfile .
+
+sudo docker run -d -p 80:8000 fastapi_backend_coffeeshop:v1.0
+or
+ sudo docker run -p 8000:8000 fastapi_backend_coffeeshop:v1.0
+
+sudo docker ps
+
+
+sudo apt update
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+
+scp -i AA-Key-1.pem -r .env ubuntu@16.170.240.220:/home/ubuntu/downloads_backend/
+scp -i AA-Key-1.pem -r .env ubuntu@3.3.3.3.:/home/ubuntu/downloads_backend/
+
+
+docker run -p 8000:8000 fastapi-app

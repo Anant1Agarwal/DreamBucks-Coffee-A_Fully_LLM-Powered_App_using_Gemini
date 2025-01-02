@@ -4,3 +4,4 @@ google-generativeai
 pinecone
 fastapi
 uvicorn
+langchain-google-genai

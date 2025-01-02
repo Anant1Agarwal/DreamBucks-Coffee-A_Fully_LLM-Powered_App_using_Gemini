@@ -9,5 +9,6 @@ const API_URL = EXPO_FASTAPI_BASE_URL;
 
 console.log('API_URL:', API_URL); // For debugging purposes
 
+
 export { API_URL };
 

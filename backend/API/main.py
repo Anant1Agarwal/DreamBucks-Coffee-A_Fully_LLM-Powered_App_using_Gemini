@@ -8,6 +8,6 @@ agent_controller = AgentController()
 async def get_response(data: dict):
     return agent_controller.get_response(data)
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8000)

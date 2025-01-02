@@ -20,7 +20,7 @@ class DetailsAgent():
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
         self.client = genai.GenerativeModel(os.getenv("MODEL_NAME"),system_instruction=system_prompt)
         #Embedding Client
-        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../service_Account_key.json"
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./service_Account_key.json"
         self.embedding_client = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
         #pinecone----
         self.pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
