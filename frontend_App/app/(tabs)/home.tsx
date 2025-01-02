@@ -59,7 +59,8 @@ const home = () => {
         setShownProducts(productsData);
 
         setProducts(productsData);
-        console.log(productsData);
+        // console.log(productsData);
+        console.log("products loaded");
       } catch (error) {
         console.log("errors in loading products");
         console.log(error);

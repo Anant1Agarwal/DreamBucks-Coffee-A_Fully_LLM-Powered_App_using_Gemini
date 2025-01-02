@@ -20,3 +20,9 @@ export interface MessageInterface {
     parts: string;
     memory?: any;
 }
+
+// Object_Types/types.ts
+declare module '@env' {
+    export const EXPO_FASTAPI_BASE_URL: string;
+  }
+  

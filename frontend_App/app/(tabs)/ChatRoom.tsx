@@ -7,6 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MessageList from '@/components/MessageList';
+import { callChatBotAPI } from '@/services/ChatBot';
 
 const ChatRoom = () => {
   const {addToCart, emptyCart} = useCart();
@@ -31,23 +32,23 @@ const ChatRoom = () => {
         if(inputRef) inputRef?.current?.clear(); // Clear the input field
        
         setIsTyping(true)
-        // let resposnseMessage = await callChatBotAPI(InputMessages);
+        let responseMessage = await callChatBotAPI(InputMessages);
         await new Promise(resolve => setTimeout(resolve, 5000));
-        setMessages([...InputMessages, { parts: 'Hi,I am a Bot typing...', role: 'assistant' }]);
+        // setMessages([...InputMessages, { parts: 'Hi,I am a Bot typing...', role: 'assistant' }]);
+        setMessages([...InputMessages, responseMessage]);
 
         setIsTyping(false)
-        // setMessages(prevMessages => [...prevMessages, resposnseMessage]);
         
-        // if (resposnseMessage) {
-        //     if (resposnseMessage.memory ) {
-        //         if (resposnseMessage.memory.order) {
-        //             emptyCart()
-        //             resposnseMessage.memory.order.forEach((item: any) => {
-        //             addToCart(item.item, item.quantity)
-        //             });
-        //         }
-        //     }
-        // }
+        if (responseMessage) {
+            if (responseMessage.memory ) {
+                if (responseMessage.memory.order) {
+                    emptyCart()
+                    responseMessage.memory.order.forEach((item: any) => {
+                    addToCart(item.item, item.quantity)
+                    });
+                }
+            }
+        }
         
 
     } catch(err:any ) {

@@ -5,8 +5,10 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
-    }
+      ],
+      "@env": ["./Object_Types/types.ts"]
+    },
+    "typeRoots": ["./node_modules/@types", "./Object_Types"]
   },
   "include": [
     "**/*.ts",
