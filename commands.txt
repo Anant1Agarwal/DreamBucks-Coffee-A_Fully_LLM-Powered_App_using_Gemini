@@ -89,6 +89,7 @@ whereas state is local state management in react native
 
 docker compose up --build
 docker compose up
+docker compose down
 
 
 on amazon ec2 instance,run these commands
