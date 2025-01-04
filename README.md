@@ -3,13 +3,27 @@
 DreamBucks Coffee is a redesign of the Starbucks Coffee app using Google Gemini, a fully LLM powered agentic mobile app. The app is designed to provide a personalized experience to the users by understanding their preferences and recommending the best coffee/bakery options. The app uses Google Gemini to generate natural language responses and provide a conversational experience to the users.The app is designed to be user-friendly and easy to use, with a simple and intuitive interface. The app is fully controllable through the use of AI Agents powered by LLM model (Google Gemini).These AI agents can provide store/product details, recommend products based on market basket analysis and user preferences, and even help users place orders.
  
  ## 👨🏻‍💻 Technologies Used:
+ <p align="center">
+
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" height=60 width=60 />
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original-wordmark.svg"  height=60 width=60 />
+ <img src="https://static.cdnlogo.com/logos/g/69/google-gemini.svg" height=60 width=60 />
+
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"  height=60 width=60 />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"  height=60 width=60 />
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"  height=60 width=60 />
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-plain-wordmark.svg"  height=60 width=60 />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height=60 width=60 />
+</p>
+
+
 - React Native
 - Google Gemini
 - Pinecone
 - LangChain
 - Firebase
 - Scikit-learn
-- JavaScript
+- TypeScript
 - FastAPI
 - Docker
 - Amazon Web Services (AWS) EC2
@@ -25,11 +39,15 @@ DreamBucks Coffee is a redesign of the Starbucks Coffee app using Google Gemini,
  * Helps users place orders through chat service.
  * uses Firebase to store product details and popular recommendations.
  
- ## 🤩 Product Images:
+
+ ## 🤩 Product Images:![FinalProd](https://github.com/user-attachments/assets/57fa6329-3892-4365-9706-2e3a07e0ab8c)
+
 
  
 ## 🚀 Product Architecture
 ### Diagram: 
+![Final_Prouduct_architecture](https://github.com/user-attachments/assets/12c8484b-296c-4dca-9426-b45b2fbb7c58)
+
 
 
 ### Description:
