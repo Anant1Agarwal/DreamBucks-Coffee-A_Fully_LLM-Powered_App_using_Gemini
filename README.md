@@ -61,7 +61,7 @@ DreamBucks Coffee is a redesign of the Starbucks Coffee app using Google Gemini,
 
 ### 5 Key LLM Agents used in the app:
 1. **Guard Agent:** responsible for ensuring safe and contextually relevant interactions with the user, and blocks any inappropriate or irrelevant query sent to the system.
-2 **Classification Agent:** responsible for classifying user queries into different categories like store details, product details, recommendations, or placing orders.
+2. **Classification Agent:** responsible for classifying user queries into different categories like store details, product details, recommendations, or placing orders.
 3. **Details Agent** responsible for providing detailed information about the store, products, or ingredients. it retrieves relevant data from **Pinecone vector database** and sends this data to Gemini to create relevant responses.
 4. **Recommendation Providing Agent:** responsible for generating personalized recommendations based on user preferences and market basket analysis. It uses **Scikit-learn** to generate recommendations. It also ensures whether the user is asking for recommendationns in general or for a specific product category and provides recommendations accordingly according to items added in the cart.
 5. **Order Taking Agent:** responsible for helping users place orders through the chat service. Users can ask for recommendations, add items to their cart, and place orders using this agent. The agent also ensures that the states of the cart are maintained and the user is able to place orders seamlessly.
